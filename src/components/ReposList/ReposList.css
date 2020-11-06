@@ -1,0 +1,18 @@
+.repos-table {
+  color: #ffffff;
+  margin: auto;
+}
+
+.repos-table tr {
+  padding: 15px;
+}
+
+.repos-table tr th {
+  background-color: red;
+}
+
+.repos-table tr td {
+  background-color: black;
+  text-align: center;
+  padding: 8px;
+}
