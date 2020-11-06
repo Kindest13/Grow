@@ -1,12 +1,12 @@
-import React, { Component, Fragment } from 'react';
-import PropTypes from 'prop-types';
-import './StrictModeComponent.css';
+import React, { Component, Fragment } from "react";
+import PropTypes from "prop-types";
+import "./StrictModeComponent.css";
 
 class StrictModeComponent extends Component {
   state = {
     mounted: true,
-    updated: false
-  }
+    updated: false,
+  };
 
   UNSAFE_componentWillMount() {
     this.setState({ mounted: false });
@@ -19,15 +19,14 @@ class StrictModeComponent extends Component {
   }
 
   UNSAFE_componentWillUpdate() {
-    if(!this.state.updated) {
+    if (!this.state.updated) {
       this.setState({ updated: true });
       console.log("Inside UNSAFE_componentWillUpdate");
     }
   }
 
-
   render() {
-    console.log("Render: ", this.state)
+    console.log("Render: ", this.state);
     return (
       <Fragment>
         <div className="strict-wrapper">
@@ -44,22 +43,45 @@ class StrictModeComponent extends Component {
               <li>componentWillReceiveProps</li>
             </ul>
           </li>
-          <li><h2>Warning about legacy string ref API usage - alternative use new ref API</h2></li>
-          <li><h2>Warning about deprecated findDOMNode usage - alternative use ref</h2></li>
+          <li>
+            <h2>
+              Warning about legacy string ref API usage - alternative use new
+              ref API
+            </h2>
+          </li>
+          <li>
+            <h2>
+              Warning about deprecated findDOMNode usage - alternative use ref
+            </h2>
+          </li>
           <li>
             <h2>Detecting unexpected side effects</h2>
             <p>Conceptually, React does work in two phases:</p>
             <ul>
-              <li>The render phase determines what changes need to be made to e.g. the DOM. During this phase, React calls render and then compares the result to the previous render.</li>
-              <li>The commit phase is when React applies any changes. (In the case of React DOM, this is when React inserts, updates, and removes DOM nodes.) React also calls lifecycles like componentDidMount and componentDidUpdate during this phase.</li>
+              <li>
+                The render phase determines what changes need to be made to e.g.
+                the DOM. During this phase, React calls render and then compares
+                the result to the previous render.
+              </li>
+              <li>
+                The commit phase is when React applies any changes. (In the case
+                of React DOM, this is when React inserts, updates, and removes
+                DOM nodes.) React also calls lifecycles like componentDidMount
+                and componentDidUpdate during this phase.
+              </li>
             </ul>
           </li>
           <li>
-            <h3>Render phase lifecycles include the following class component methods:</h3>
+            <h3>
+              Render phase lifecycles include the following class component
+              methods:
+            </h3>
             <ul>
               <li>constructor</li>
               <li>componentWillMount (or UNSAFE_componentWillMount)</li>
-              <li>componentWillReceiveProps (or UNSAFE_componentWillReceiveProps)</li>
+              <li>
+                componentWillReceiveProps (or UNSAFE_componentWillReceiveProps)
+              </li>
               <li>componentWillUpdate (or UNSAFE_componentWillUpdate)</li>
               <li>getDerivedStateFromProps</li>
               <li>shouldComponentUpdate</li>
@@ -69,14 +91,12 @@ class StrictModeComponent extends Component {
           </li>
         </ol>
       </Fragment>
-    )
+    );
   }
 }
 
-
 StrictModeComponent.propTypes = {
-  name: PropTypes.string
-}
-
+  name: PropTypes.string,
+};
 
 export default StrictModeComponent;

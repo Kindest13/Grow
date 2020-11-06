@@ -1,10 +1,10 @@
-import PropTypes from 'prop-types';
-import './ReposList.css';
+import PropTypes from "prop-types";
+import "./ReposList.css";
 
-export default function ReposList ({ repos }) {
+export default function ReposList({ repos }) {
   if (!repos) return null;
   if (!repos.length) return <p>No repos, sorry</p>;
-  
+
   return (
     <table className="repos-table">
       <thead>
@@ -14,7 +14,7 @@ export default function ReposList ({ repos }) {
         </tr>
       </thead>
       <tbody>
-        {repos.map(repo => (
+        {repos.map((repo) => (
           <tr key={repo.id}>
             <td>{repo.name}</td>
             <td>{repo.size}</td>
@@ -22,11 +22,9 @@ export default function ReposList ({ repos }) {
         ))}
       </tbody>
     </table>
-  )
-
+  );
 }
 
 ReposList.propTypes = {
-  repos: PropTypes.arrayOf(PropTypes.object)
-}
-
+  repos: PropTypes.arrayOf(PropTypes.object),
+};
