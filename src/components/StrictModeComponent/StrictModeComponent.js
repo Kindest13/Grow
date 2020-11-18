@@ -30,7 +30,7 @@ class StrictModeComponent extends Component {
     return (
       <Fragment>
         <div className="strict-wrapper">
-          <h1>StrictModeComponent by {this.props.name}</h1>
+          <h1>Strict Mode Component</h1>
           {this.state.mounted && <h2>Mounted</h2>}
           {this.state.updated && <h2>Updated</h2>}
         </div>

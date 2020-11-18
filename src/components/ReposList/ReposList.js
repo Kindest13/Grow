@@ -6,22 +6,25 @@ export default function ReposList({ repos }) {
   if (!repos.length) return <p>No repos, sorry</p>;
 
   return (
-    <table className="repos-table">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Size</th>
-        </tr>
-      </thead>
-      <tbody>
-        {repos.map((repo) => (
-          <tr key={repo.id}>
-            <td>{repo.name}</td>
-            <td>{repo.size}</td>
+    <>
+      <h1 style={{ textAlign: "center" }}>HOC withLoader</h1>
+      <table className="repos-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Size</th>
           </tr>
-        ))}
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          {repos.map((repo) => (
+            <tr key={repo.id}>
+              <td>{repo.name}</td>
+              <td>{repo.size}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </>
   );
 }
 
