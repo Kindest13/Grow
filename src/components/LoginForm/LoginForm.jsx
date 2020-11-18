@@ -43,8 +43,8 @@ export default class LoginForm extends Component {
                     onChange={this.update}
                 />
 
-                <button type="button" onClick={this.submit}>Войти</button>
-                <button type="button" onClick={this.reset}>Сбросить</button>
+                <button className="blue-btn" type="button" onClick={this.submit}>Войти</button>
+                <button className="blue-btn" type="button" onClick={this.reset}>Сбросить</button>
             </form>
         );
     }

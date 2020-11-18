@@ -13,7 +13,7 @@ export default class ErrorBoundary extends Component {
     if(this.state.hasError) {
       return <div className="error">
                 <p>Error has been detected!</p>
-                <button onClick={() => console.log("Message of error")}>Inform about error</button>
+                <button className="blue-btn" onClick={() => console.log("Message of error")}>Inform about error</button>
             </div>
     } else {
       return this.props.children;

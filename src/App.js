@@ -8,11 +8,13 @@ import ReposList from "./components/ReposList/ReposList";
 import Counter from './components/Counter/Counter';
 import LoginForm from './components/LoginForm/LoginForm';
 import ErrorBoundary from "./components/ErrorBoundary/ErrorBoundary";
+import Modal from './components/Modal/Modal';
 
 const ListWithLoader = withLoader(ReposList);
 
 function App() {
   const [repos, setRepos] = useState(null);
+  const [isModalOpened, setIsModalOpened] = useState(false);
   useEffect(() => {
     (async () => {
       const fetchedRepos = await (
@@ -24,8 +26,17 @@ function App() {
     })();
   }, []);
 
+  const toggleModal = () => setIsModalOpened(!isModalOpened)
+
   return (
     <div className="App">
+      <button className="blue-btn" style={{ margin: 'auto' }} onClick={toggleModal}>Open</button>
+      {
+        isModalOpened &&
+        <Modal onClose={toggleModal}>
+          <h1>Modal</h1>
+        </Modal>
+      }
       <ErrorBoundary>
         <LoginForm />
       </ErrorBoundary>
